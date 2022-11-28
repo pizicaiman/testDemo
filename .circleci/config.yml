@@ -39,3 +39,7 @@ workflows:
     jobs:
       - say-hello
       - yes-hello
+  yes-hello-workflow:
+    jobs:
+      - yes-hello
+      - say-hello
