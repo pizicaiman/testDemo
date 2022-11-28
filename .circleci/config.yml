@@ -20,6 +20,17 @@ jobs:
       - run:
           name: "say two hello"
           command: "echo nihao"
+  yes-hello:
+    docker:
+      - image: nginx
+    steps:
+      - checkout
+      - run:
+          name: "demo test"
+          command: "echo demo,test"
+      - run:
+          name: "demo test2"
+          command: "echo demo,test2"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -27,3 +38,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - yes-hello
